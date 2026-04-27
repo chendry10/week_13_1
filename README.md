@@ -82,9 +82,9 @@ Prompt your AI tool:
 
 | | Your notes |
 |---|---|
-| One thing AI did well | |
-| One thing AI got wrong or missed | |
-| Did AI's test pass without changes? | Yes / No / Needed edits |
+| One thing AI did well |It increased my productivity and found all the bugs|
+| One thing AI got wrong or missed |It fixed an unnecessary issue regarding string.toList()|
+| Did AI's test pass without changes? |Yes|
 
 ---
 
