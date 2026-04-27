@@ -4,6 +4,7 @@ import com.lab.library.model.Book;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 public class BookRepository {
@@ -27,13 +28,13 @@ public class BookRepository {
     public List<Book> findCheckedOut() {
         return books.stream()
                 .filter(Book::isCheckedOut)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public List<Book> findAvailable() {
         return books.stream()
                 .filter(b -> !b.isCheckedOut())
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public void clear() {
