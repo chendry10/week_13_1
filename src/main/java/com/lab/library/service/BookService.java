@@ -4,6 +4,7 @@ import com.lab.library.model.Book;
 import com.lab.library.repository.BookRepository;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class BookService {
 
@@ -13,13 +14,11 @@ public class BookService {
         this.repository = repository;
     }
 
-   
     public void addBook(String isbn, String title, String author) {
         Book book = new Book(isbn, title, author);
         repository.save(book);
     }
 
-  
     public boolean checkOut(String isbn) {
         Optional<Book> found = repository.findByIsbn(isbn);
         if (found.isEmpty()) {
@@ -33,7 +32,6 @@ public class BookService {
         return true;
     }
 
-  
     public boolean returnBook(String isbn) {
         Optional<Book> found = repository.findByIsbn(isbn);
         if (found.isEmpty()) {
@@ -47,19 +45,16 @@ public class BookService {
         return true;
     }
 
-  
     public List<Book> searchByTitle(String query) {
         return repository.findAll().stream()
                 .filter(b -> b.getTitle().toLowerCase().contains(query.toLowerCase()))
-                .toList();
+                .collect(Collectors.toList());
     }
-
 
     public List<Book> getCheckedOutBooks() {
         return repository.findCheckedOut();
     }
 
- 
     public List<Book> getAvailableBooks() {
         return repository.findAvailable();
     }
