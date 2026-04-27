@@ -19,11 +19,11 @@
 
   <dependencies>
 
-    <!-- BUG #1: This version does not exist. Fix it to 5.10.0 -->
+    <!-- BUG #1: This version does not exist. Fixed to 5.10.0 -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>5.99.99-BROKEN</version>
+      <version>5.10.0</version>
       <scope>test</scope>
     </dependency>
 
