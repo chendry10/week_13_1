@@ -51,6 +51,12 @@ class BookServiceTest {
         assertTrue(results.isEmpty());
     }
 
+    @Test
+    void searchByTitle_nullQuery_returnsEmpty() {
+        List<?> results = service.searchByTitle(null);
+        assertTrue(results.isEmpty());
+    }
+
     // TODO (Phase 4): Add a test for searchByTitle with a null query.
     // Currently it throws NullPointerException — after your fix it should
     // return an empty list. Ask your AI agent to help write this test.
